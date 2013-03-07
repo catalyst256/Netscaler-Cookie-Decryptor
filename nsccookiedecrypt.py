@@ -107,6 +107,6 @@ if __name__ == '__main__':
     cookie = sys.argv[1]
     realname,realip,realport = decryptCookie(cookie)
     
-    print 'Server Name=%s' %realname
-    print 'Server IP=%s' %realip
-    print 'Server Port=%s' %realport
+    print 'vServer Name=%s' %realname
+    print 'vServer IP=%s' %realip
+    print 'vServer Port=%s' %realport
