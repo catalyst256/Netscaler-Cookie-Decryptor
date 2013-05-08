@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Netscaler Cookie Decryptor : Python application to decrypt Netscaler Load Balancer Persistence Cookies" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Netscaler Cookie Decryptor</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/catalyst256/Netscaler-Cookie-Decryptor">View on GitHub</a>
+
+          <h1 id="project_title">Netscaler Cookie Decryptor</h1>
+          <h2 id="project_tagline">Python application to decrypt Netscaler Load Balancer Persistence Cookies</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/catalyst256/Netscaler-Cookie-Decryptor/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/catalyst256/Netscaler-Cookie-Decryptor/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>Netscaler Cookie Decryptor
+by <a href="https://github.com/catalyst256" class="user-mention">@catalyst256</a></p>
+
+<p>This python script will take a Citrix Netscaler persistence cookie and decrypt the values. This will allow you to determine the internal addresses of a Netscaler load balanced website. Typically Netscaler cookies start with NSC_</p>
+
+<p>THis is an example of a Netscaler Cookie from the internet:</p>
+
+<p>NSC_Qspe-xxx.bwjwb.dp.vl-IUUQ=ffffffff50effd8445525d5f4f58455e445a4a423660</p>
+
+<p>You can then run this through the Netscaler Cookie Decryptor using from the command line:</p>
+
+<p>nsccookiedecrypt.py NSC_Qspe-xxx.bwjwb.dp.vl-IUUQ=ffffffff50effd8445525d5f4f58455e445a4a423660</p>
+
+<p>This would return you the following:</p>
+
+<p>Server Name=Prod-<a href="http://www.xxxxx.co.uk-HTTP">www.xxxxx.co.uk-HTTP</a>
+Server IP=83.231.227.149
+Server Port=80</p>
+
+<p>This code will work on Windows (tested) and Linux (tested) and probably OSX (not tested).</p>
+
+<p>Thanks to:
+Alejandro Nolla Blanco - <a href="mailto:alejandro.nolla@gmail.com">alejandro.nolla@gmail.com</a> - <a href="https://github.com/z0mbiehunt3r" class="user-mention">@z0mbiehunt3r</a> - for the inspiration to write this and for adding the error correction.
+Daniel Grootveld - <a href="mailto:danielg75@gmail.com">danielg75@gmail.com</a> - @shDaniell - for helping with the XOR method of decryption, adding the service port decryption and for making my regex more robust.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Netscaler Cookie Decryptor maintained by <a href="https://github.com/catalyst256">catalyst256</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-40735183-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
