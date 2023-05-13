@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 """
@@ -35,7 +35,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 import sys
 import re
 import string
-from string import maketrans, ascii_letters
+
 
 
 
@@ -60,7 +60,7 @@ def decryptServiceName(servicename):
     @return: service name
     """
     #This decrypts the Caesar Subsitution Cipher Encryption used on the Netscaler Cookie Name
-    trans = maketrans('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ','zabcdefghijklmnopqrstuvwxyZABCDEFGHIJKLMNOPQRSTUVWXY')
+    trans = str.maketrans('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ','zabcdefghijklmnopqrstuvwxyZABCDEFGHIJKLMNOPQRSTUVWXY')
     realname = servicename.translate(trans)
     return realname
         
@@ -101,12 +101,12 @@ def decryptCookie(cookie):
 if __name__ == '__main__':
     
     if len(sys.argv) != 2:
-        print "USAGE: %s NetScalerCookie" % sys.argv[0]
+        print("USAGE: %s NetScalerCookie" % sys.argv[0])
         sys.exit(1)
     
     cookie = sys.argv[1]
     realname,realip,realport = decryptCookie(cookie)
     
-    print 'vServer Name=%s' %realname
-    print 'vServer IP=%s' %realip
-    print 'vServer Port=%s' %realport
+    print('vServer Name=%s' %realname)
+    print('vServer IP=%s' %realip)
+    print('vServer Port=%s' %realport)
